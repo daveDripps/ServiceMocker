@@ -1,5 +1,9 @@
 package com.thebelfastcodeforge.servicemocker.controllers;
 
+import java.util.UUID;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,65 +11,93 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloGoodbyeController {
 	
+	private final Logger logger = LoggerFactory.getLogger(HelloGoodbyeController.class);
+	
+	private final UUID uuid = UUID.randomUUID();
+	
 	@RequestMapping(value = "/helloWorld", method = RequestMethod.GET)
 	public String helloWorld() {
-		return "Hello World";
+		String output = "Hello World"+" from "+uuid.toString();
+		logger.debug(output);
+		return output;
 	}
 	
 	@RequestMapping(value = "/goodbyeWorld", method = RequestMethod.GET)
 	public String goodbyeWorld() {
-		return "Goodbye World";
+		String output = "Goodbye World"+" from "+uuid.toString();
+		logger.debug(output);
+		return output;
 	}
 
 	
 	@RequestMapping(value = "/helloOne", method = RequestMethod.GET)
 	public String helloOne() {
-		return "Hello One";
+		String output = "Hello One"+" from "+uuid.toString();
+		logger.debug(output);
+		return output;
 	}
 	
 	@RequestMapping(value = "/helloTwo", method = RequestMethod.GET)
 	public String helloTwo() {
-		return "Hello Two";
+		String output =  "Hello Two"+" from "+uuid.toString();
+		logger.debug(output);
+		return output;
 	}
 	
 	@RequestMapping(value = "/helloThree", method = RequestMethod.GET)
 	public String helloThree() {
-		return "Hello Three";
+		String output =  "Hello Three"+" from "+uuid.toString();
+		logger.debug(output);
+		return output;
 	}
 	
 	@RequestMapping(value = "/helloFour", method = RequestMethod.GET)
 	public String helloFour() {
-		return "Hello Four";
+		String output =  "Hello Four"+" from "+uuid.toString();
+		logger.debug(output);
+		return output;
 	}
 	
 	@RequestMapping(value = "/helloFive", method = RequestMethod.GET)
 	public String helloFive() {
-		return "Hello Five";
+		String output =  "Hello Five"+" from "+uuid.toString();
+		logger.debug(output);
+		return output;
 	}
 	
 	@RequestMapping(value = "/goodbyeOne", method = RequestMethod.GET)
 	public String goodbyeOne() {
-		return "Goodbye One";
+		String output =  "Goodbye One"+" from "+uuid.toString();
+		logger.debug(output);
+		return output;
 	}
 	
 	@RequestMapping(value = "/goodbyeTwo", method = RequestMethod.GET)
 	public String goodbyeTwo() {
-		return "Goodbye Two";
+		String output =  "Goodbye Two"+" from "+uuid.toString();
+		logger.debug(output);
+		return output;
 	}
 	
 	@RequestMapping(value = "/goodbyeThree", method = RequestMethod.GET)
 	public String goodbyeThree() {
-		return "Goodbye Three";
+		String output =  "Goodbye Three"+" from "+uuid.toString();
+		logger.debug(output);
+		return output;
 	}
 	
 	@RequestMapping(value = "/goodbyeFour", method = RequestMethod.GET)
 	public String goodbyeFour() {
-		return "Goodbye Four";
+		String output =  "Goodbye Four"+" from "+uuid.toString();
+		logger.debug(output);
+		return output;
 	}
 	
 	@RequestMapping(value = "/goodbyeFive", method = RequestMethod.GET)
 	public String goodbyeFive() {
-		return "Goodbye Five";
+		String output =  "Goodbye Five"+" from "+uuid.toString();
+		logger.debug(output);
+		return output;
 	}
 
 
