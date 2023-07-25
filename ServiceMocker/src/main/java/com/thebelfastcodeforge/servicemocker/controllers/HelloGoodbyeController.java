@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,13 @@ public class HelloGoodbyeController {
 	private final Logger logger = LoggerFactory.getLogger(HelloGoodbyeController.class);
 	
 	private final UUID uuid = UUID.randomUUID();
-	
+
+	@RequestMapping(value = "/hello", method = RequestMethod.POST)
+	public String hello(@RequestBody String input) {
+		String output = "Hello World"+" contents: "+input;
+		logger.debug(output);
+		return output;
+	}
 	@RequestMapping(value = "/helloWorld", method = RequestMethod.GET)
 	public String helloWorld() {
 		String output = "Hello World"+" from "+uuid.toString();
